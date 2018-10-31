@@ -81,7 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+
+                    Join Laravel 776655
+                    
                 </div>
 
                 <div class="links">
