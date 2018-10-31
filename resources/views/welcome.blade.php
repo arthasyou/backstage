@@ -81,9 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-
-                    Join Laravel 776655
-                    
+                    Welcome Laravel
                 </div>
 
                 <div class="links">
