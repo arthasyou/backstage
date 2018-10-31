@@ -1,0 +1,31 @@
+mysql:
+  image: mysql
+  container_name: database
+  command: --default-authentication-plugin=mysql_native_password
+  restart: always
+  ports:
+    - 3306:3306
+
+  environment:
+    MYSQL_DATABASE: rok
+    MYSQL_ROOT_PASSWORD: 123456
+
+php:
+  image: php:fpm-alpine
+  container_name: php
+  volumes:
+    - .:/var/www/backstage
+  entrypoint:
+    - php-fpm
+
+nginx:
+  image: nginx:alpine
+  container_name: nginx
+  volumes_from:
+    - php
+  volumes:
+    - ./build/nginx.conf:/etc/nginx/conf.d/default.conf
+  links:
+    - php
+  ports:
+    - 8080:80
